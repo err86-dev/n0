@@ -1,0 +1,19 @@
+{
+    "name": "Codespaces with VNC",
+    "image": "ghcr.io/markpatterson27/codespaces-vnc-image:universal",
+    "remoteUser": "codespace",
+    "runArgs": [
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined",
+        "--privileged",
+        "--init"
+    ],
+    "forwardPorts": [6080],
+    "portsAttributes": {
+        "6080": {
+            "label": "noVNC Viewer",
+            "onAutoForward": "openBrowser"
+        }
+    }
+}
